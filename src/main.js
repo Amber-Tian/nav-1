@@ -1,7 +1,6 @@
 const x = localStorage.getItem('x')
 const xObject = JSON.parse(x)
-const data = xObject || {
-    url: [
+const data = xObject || [
         'https://baidu.com',
         'https://www.acfun.cn',
         'https://www.bilibili.com',
@@ -13,11 +12,10 @@ const data = xObject || {
         'https://cn.vuejs.org/',
         'https://reactjs.org/'
     ]
-}
 
 const render = () => {
     $('.siteList').find('li:not(.last)').remove()
-    data.url.forEach((node, index) => {
+    data.forEach((node, index) => {
         const $li = $(`<li>
             <a href="${node}">
                 <div class="site">
