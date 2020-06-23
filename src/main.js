@@ -88,7 +88,7 @@ $('.addButton').on('click', ()=>{
     }
 })
 
-// window.onbeforeunload = () => {
-//     const string = JSON.stringify(data)
-//     localStorage.setItem('x', string)
-// }
+window.onbeforeunload = () => {
+    const string = JSON.stringify(data)
+    localStorage.setItem('x', string)
+}

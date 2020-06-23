@@ -182,9 +182,11 @@ $('.addButton').on('click', function () {
     data.push(url);
     render();
   }
-}); // window.onbeforeunload = () => {
-//     const string = JSON.stringify(data)
-//     localStorage.setItem('x', string)
-// }
+});
+
+window.onbeforeunload = function () {
+  var string = JSON.stringify(data);
+  localStorage.setItem('x', string);
+};
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.e928621c.js.map
+//# sourceMappingURL=main.8f17bddd.js.map
