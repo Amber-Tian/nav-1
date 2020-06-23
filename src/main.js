@@ -1,21 +1,23 @@
 const x = localStorage.getItem('x')
 const xObject = JSON.parse(x)
-const data = xObject || [
-    'https://baidu.com',
-    'https://www.acfun.cn',
-    'https://www.bilibili.com',
-    'https://developer.mozilla.org',
-    'https://www.runoob.com',
-    'https://www.w3school.com.cn/',
-    'https://www.caniuse.com/',
-    'https://jquery.com/',
-    'https://cn.vuejs.org/',
-    'https://reactjs.org/'
-]
+const data = xObject || {
+    url: [
+        'https://baidu.com',
+        'https://www.acfun.cn',
+        'https://www.bilibili.com',
+        'https://developer.mozilla.org',
+        'https://www.runoob.com',
+        'https://www.w3school.com.cn/',
+        'https://www.caniuse.com/',
+        'https://jquery.com/',
+        'https://cn.vuejs.org/',
+        'https://reactjs.org/'
+    ]
+}
 
 const render = () => {
     $('.siteList').find('li:not(.last)').remove()
-    data.forEach((node, index) => {
+    data.url.forEach((node, index) => {
         const $li = $(`<li>
             <a href="${node}">
                 <div class="site">
