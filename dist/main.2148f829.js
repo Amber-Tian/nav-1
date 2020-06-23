@@ -120,13 +120,11 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"epB2":[function(require,module,exports) {
 var x = localStorage.getItem('x');
 var xObject = JSON.parse(x);
-var data = xObject || {
-  url: ['https://baidu.com', 'https://www.acfun.cn', 'https://www.bilibili.com', 'https://developer.mozilla.org', 'https://www.runoob.com', 'https://www.w3school.com.cn/', 'https://www.caniuse.com/', 'https://jquery.com/', 'https://cn.vuejs.org/', 'https://reactjs.org/']
-};
+var data = xObject || ['https://baidu.com', 'https://www.acfun.cn', 'https://www.bilibili.com', 'https://developer.mozilla.org', 'https://www.runoob.com', 'https://www.w3school.com.cn/', 'https://www.caniuse.com/', 'https://jquery.com/', 'https://cn.vuejs.org/', 'https://reactjs.org/'];
 
 var render = function render() {
   $('.siteList').find('li:not(.last)').remove();
-  data.url.forEach(function (node, index) {
+  data.forEach(function (node, index) {
     var $li = $("<li>\n            <a href=\"".concat(node, "\">\n                <div class=\"site\">\n                    <div class=\"logo\">\n                        <img src=").concat(node + '/favicon.ico', " onerror=\"this.onerror=null;this.src='http://thumbs.dreamstime.com/t/%E4%BA%92%E8%81%94%E7%BD%91%E3%80%81%E5%9C%B0%E7%90%83%E5%92%8C%E6%B8%B8%E6%A0%87%E7%9A%84%E6%A0%87%E5%BF%97-114656224.jpg'\">\n                    </div>\n                    <div class=\"link\">").concat(node.replace('https://', '').replace(/\/.*/, '').replace('www.', ''), "</div>\n                </div>\n            </a>\n            <div class=\"delete\">\n                <svg class=\"icon\" aria-hidden=\"true\">\n                    <use xlink:href=\"#icon-delete\"></use>\n                </svg>\n            </div>\n        </li>")).insertBefore($('.last'));
     var isTouchDevice = ('ontouchstart' in document.documentElement);
 
